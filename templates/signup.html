@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
+<!-- Mirrored from html.kodesolution.live/s/studypress/v6.0/demo/index-mp-layout1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Feb 2022 14:25:23 GMT -->
 <head>
 
 <!-- Meta Tags -->
@@ -77,8 +78,8 @@
             <div class="row">
               <div class="col-md-6 col-md-push-3">
                 <div class="text-center mb-60"><a href="#" class=""><img alt="" src="{{url_for('static',filename='images/logo-wide.png')}}"></a></div>
-                <h4 class="text-theme-colored mt-0 pt-5"> Login</h4>
-                <form  class="form-transparent clearfix" action="{{url_for('login')}}" method="post">
+                <h4 class="text-theme-colored mt-0 pt-5"> signup</h4>
+                <form  class="form-transparent clearfix" action="{{url_for('signup')}}" method="post">
                   <div class="row">
                     <div class="form-group col-md-12">
                       <label for="form_username_email">Username/Email</label>
@@ -91,25 +92,19 @@
                       <input id="form_password" name="password"placeholder="Enter Your password" style="width:580px" class="textbox" class="form-control" type="text">
                     </div>
                   </div>
-                  <div class="checkbox pull-left mt-15">
-                    <label for="form_checkbox">
-                      <input id="form_checkbox" name="form_checkbox" type="checkbox">
-                      Remember me </label>
-                  </div>
+
                   <div class="form-group pull-right mt-10">
-                    <button type="submit" style="background-color:#F2184F" style="width:280px;text-align:center" class="btn btn-dark btn-sm">Login</button>
+                    <button type="submit" style="background-color:#F2184F" style="width:280px;text-align:center" class="btn btn-dark btn-sm">signup</button>
                   </div>
                   <div class="clear text-center pt-10">
-                    <a class="text-theme-colored font-weight-600 font-12" href="#">Forgot Your Password?</a>
-                  </div>
+                <p></p><p></p>    
+                </div>
                   <div class="clear text-center pt-10">
-                    <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="#" data-bg-color="#3b5998">Login with facebook</a>
-                    <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee">Login with twitter</a>
+                    <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="#" data-bg-color="#3b5998">signup with facebook</a>
+                    <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee">Signup with twitter</a>
                   </div>
                 </form>
-                <div class="clear text-center pt-10">
-                  <a style="background-color:#F2184F;color:white" class="btn btn btn-lg btn-block no-border mt-15 mb-15" href="{{url_for('signup')}}" data-bg-color="#3b5998">Sign Up</a>
-                </div>
+               
                  </div>
             </div>
           </div>

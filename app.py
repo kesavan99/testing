@@ -70,10 +70,7 @@ app.secret_key="kesavan99"
 def home():
     return render_template('index.html')
 
-@app.route("/course",methods =['GET', 'POST'])
-def course():
-    
-    return render_template('page-course-list.html')
+
 @app.route("/", methods =['GET', 'POST'])
 def login():
     if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
@@ -111,7 +108,7 @@ def signup():
         user=auth.create_user_with_email_and_password(email,password)
         session["user"]=user
 
-        return redirect('home')
+        return redirect('update')
     return render_template('signup.html',m="4444444444")
 
 @app.route('/update',methods=['GET','POST'])
@@ -125,29 +122,29 @@ def update():
     if request.method == 'POST' and 'Name' in request.form and 'Surname' in request.form:
         name=request.form['Name']
         lastname=request.form['Surname']
-        mobile=request.form['Mobile']
-        address1=request.form['Address1']
-        address2=request.form['Address2']
-        postcode=request.form['Postcode']
+       
+        address1=request.form['Address']
+       
+       
         state=request.form['State']
-        area=request.form['Area']
-        email=request.form['Email']
+        
+        email=user['email']
         education=request.form['education']
         country=request.form['country']
-        district=request.form['district']
-        topic1=request.form['topic1']
-        topic2=request.form['topic2']
+        
+        topic=request.form['topic']
+        
         file=request.files['file']
-        data = {'name':name,'lastname':lastname,'mobile':mobile,'address1':address1,'address2':address2,'postcode':postcode,'state':state,'area':area,'email':email,'education':education,'country':country,'district':district,'topic1':topic1,'topic2':topic1}
+        data = {'name':name,'lastname':lastname,'address1':address1,'state':state,'email':email,'education':education,'country':country,'topic':topic}
         db.collection('users').document(id).set(data)
         pathc="users/"+id
         storage.child(pathc).put(file)
-        return redirect('choose')
+        return redirect('home')
 
 
 
             
-    return render_template('profileupdate.html',user=user)
+    return render_template('update.html',user=user)
 
 
 
@@ -205,7 +202,9 @@ def profile():
 
     return render_template("profile.html",photo=photo,data=data,ml=res)
 
-
+@app.route("/course")
+def course():
+    return render_template('course.html')
 
 @app.route('/choose',methods=['GET','POST'])
 def choose():
@@ -289,6 +288,7 @@ def hi():
 
 
     return render_template('2.html',data=k)
+
 
 
 
